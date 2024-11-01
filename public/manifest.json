@@ -2,27 +2,77 @@
   "name": "Test PWA",
   "short_name": "Test",
   "description": "Testing testing, 1, 2, 3",
-  "start_url": "/",
-  "scope": "/Home.html",
+  "start_url": "/https://landingpagedecimo-production.up.railway.app/",
+  "scope": "/landing.blade.php",
   "icons": [
       {
-          "src": "/icons/icon128.png",
-          "sizes": "128x128",
+          "src": "/img/facebook-icon.png",
+          "sizes": "360x360",
           "type": "image/png"
       },
       {
-          "src": "/icons/icon256.png",
-          "sizes": "256x2565",
-          "type": "image/png"
+        "src": "/img/instagram-icon.png",
+        "sizes": "360x360",
+        "type": "image/png"
       },
       {
-          "src": "/icons/icon512.png",
-          "sizes": "512x512",
-          "type": "image/png"
-      }
+        "src": "/img/linkedin-icon.png",
+        "sizes": "360x360",
+        "type": "image/png"
+    },
+    {
+        "src": "/img/logo.jpeg",
+        "sizes": "500x500",
+        "type": "image/jpeg"
+    },
+    {
+        "src": "/img/nano.jpeg",
+        "sizes": "1600x800",
+        "type": "image/jpeg"
+    },
+    {
+        "src": "/img/portada.jpeg",
+        "sizes": "1599x799",
+        "type": "image/jpeg"
+    },
+    {
+        "src": "/img/snapchat-icon.png",
+        "sizes": "360x360",
+        "type": "image/png"
+    },
+    {
+        "src": "/img/twitter.png",
+        "sizes": "360x360",
+        "type": "image/png"
+    },
+    {
+        "src": "/img/user1.jpg",
+        "sizes": "250x250",
+        "type": "image/jpeg"
+    },
+    {
+        "src": "/img/user2.jpg",
+        "sizes": "250x250",
+        "type": "image/jpeg"
+    },
+    {
+        "src": "/img/virus.jpeg",
+        "sizes": "1599x799",
+        "type": "image/jpeg"
+    },
+    {
+        "src": "/img/wave2.png",
+        "sizes": "1900x174",
+        "type": "image/png"
+    },
+      {
+        "src": "/img/whatsapp-icon.png",
+        "sizes": "360x360",
+        "type": "image/png"
+    }
   ],
-  "theme_color": "#305010",
-  "background_color": "#0F7F9F",
+  "theme_color": "#333",
+  "background_color":"#f4f4f4",
   "display": "fullscreen",
   "orientation": "portrait"
 }
