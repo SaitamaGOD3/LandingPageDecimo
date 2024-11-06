@@ -3,7 +3,7 @@
   "short_name": "Test",
   "description": "Testing testing, 1, 2, 3",
   "start_url": "https://landingpagedecimo-production.up.railway.app",
-  "scope": "/app/",
+  "scope": "/landing.blade.php",
   "icons": [
       {
           "src": "/img/facebook-icon.png",
