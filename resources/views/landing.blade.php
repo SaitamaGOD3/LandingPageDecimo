@@ -141,7 +141,7 @@
     </div>
 </section>
 
-    <<footer id="Footer" class="custom-footer text-white text-center p-3">
+    <footer id="Footer" class="custom-footer text-white text-center p-3">
         <div class="container">
             <div class="row">
                 <div class="col-12">
