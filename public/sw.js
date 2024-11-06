@@ -17,7 +17,7 @@ var urlsToCache = [
   './icons/wave2.png',
   './icons/whatsapp-icon.png',
   './https://landingpagedecimo-production.up.railway.app/',
-  './css/styles.css',
+  './css/style.css',
   './main.js',
   './manifest.json',
   './package-lock.json',
