@@ -119,7 +119,7 @@
             <div class="col-md-6">
                 <h2 class="text-center">Contáctanos</h2>
                 <p class="text-center">¿Tienes alguna pregunta o comentario sobre <strong>Healing Nano</strong>? Nos encantaría saber de ti. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
-                <form id="contact-form" action="{{ route('contact.submit') }}" method="POST" autocomplete="off">
+                <form id="contact-form" action="https://landingpagedecimo-production.up.railway.app/contact/submit" method="POST" autocomplete="off">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Nombre</label>

@@ -3,70 +3,70 @@
   "short_name": "Test",
   "description": "Testing testing, 1, 2, 3",
   "start_url": "/",
-  "scope": "/",
+  "scope": "/landing.blade.php",
   "icons": [
       {
-          "src":"{{ asset('img/facebook-icon.png') }}",
+          "src":"icons/facebook-icon.png",
           "sizes": "360x360",
           "type": "image/png"
       },
       {
-        "src": "{{ asset('img/instagram-icon.png') }}",
+        "src": "icons/instagram-icon.png",
         "sizes": "360x360",
         "type": "image/png"
       },
       {
-        "src": "{{ asset('img/linkedin-icon.png') }}",
+        "src": "icons/linkedin-icon.png",
         "sizes": "360x360",
         "type": "image/png"
     },
     {
-        "src": "{{ asset('img/logo.jpeg') }}",
+        "src": "icons/logo.jpeg",
         "sizes": "500x500",
         "type": "image/jpeg"
     },
     {
-        "src": "{{ asset('img/nano.jpeg') }}",
+        "src": "icons/nano.jpeg",
         "sizes": "1600x800",
         "type": "image/jpeg"
     },
     {
-        "src": "{{ asset('img/portada.jpeg') }}",
+        "src": "icons/portada.jpeg",
         "sizes": "1599x799",
         "type": "image/jpeg"
     },
     {
-        "src": "{{ asset('img/snapchat-icon.png') }}",
+        "src": "icons/snapchat-icon.png",
         "sizes": "360x360",
         "type": "image/png"
     },
     {
-        "src": "{{ asset('img/twitter-icon.png') }}",
+        "src": "icons/twitter-icon.png",
         "sizes": "360x360",
         "type": "image/png"
     },
     {
-        "src": "{{ asset('img/user1.jpg') }}",
+        "src": "icons/user1.jpg",
         "sizes": "250x250",
         "type": "image/jpeg"
     },
     {
-        "src": "{{ asset('img/user2.jpg') }}",
+        "src": "icons/user2.jpg",
         "sizes": "250x250",
         "type": "image/jpeg"
     },
     {
-        "src": "{{ asset('img/virus.jpeg') }}",
+        "src": "icons/virus.jpeg",
         "sizes": "1599x799",
         "type": "image/jpeg"
     },
     {
-        "src": "{{ asset('img/wave2.png') }}",
+        "src": "icons/wave2.png",
         "sizes": "1900x174",
         "type": "image/png"
     },
       {
-        "src": "{{ asset('img/whatsapp-icon.png') }}",
+        "src": "icons/whatsapp-icon.png",
         "sizes": "360x360",
         "type": "image/png"
     }
