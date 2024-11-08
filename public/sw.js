@@ -11,8 +11,8 @@ var urlsToCache = [
   './icons/portada.jpeg',
   './icons/snapchat-icon.png',
   './icons/twitter-icon.png',
-  './icons/userm.jpeg',
-  './icons/userv.jpeg',
+  './icons/userm.jpg',
+  './icons/userv.jpg',
   './icons/virus.jpeg',
   './icons/wave2.png',
   './icons/whatsapp-icon.png',
@@ -64,13 +64,32 @@ self.addEventListener('activate', e => {
 
 // Recuperar archivos del cache
 self.addEventListener('fetch', e => {
+  console.log('Fetch event for ', e.request.url);
   e.respondWith(
     caches.match(e.request)
       .then(res => {
         if (res) {
+          console.log('Found ', e.request.url, ' in cache');
           return res;
         }
-        return fetch(e.request);
+        console.log('Network request for ', e.request.url);
+        return fetch(e.request).then(response => {
+          // verifica si se obtuvo una respuesta positiva
+          if(!response || response.status !== 200 || response.type !== 'basic') {
+            return response;
+          }
+
+          // Añande la respuesta al cache para futuros pedidos
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME)
+            .then(cache => {
+              cache.put(e.request, responseToCache);
+            });
+
+          return response;
+        });
+      }).catch(err => {
+        console.log('Error fetching and caching new data', err);
       })
   );
 });
