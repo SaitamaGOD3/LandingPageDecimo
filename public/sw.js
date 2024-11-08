@@ -1,35 +1,37 @@
 // Asignar nombre y versión al caché
-const CACHE_NAME = 'v1_cache_102';
+const CACHE_NAME = 'v1_cache_103'; // Cambié el nombre del cache para forzar el uso de un nuevo cache
 
 // Archivos a guardar
 var urlsToCache = [
-  './icons/facebook-icon.png',
-  './icons/instagram-icon.png',
-  './icons/linkedin-icon.png',
-  './icons/logo.jpeg',
-  './icons/nano.jpeg',
-  './icons/portada.jpeg',
-  './icons/snapchat-icon.png',
-  './icons/twitter-icon.png',
-  './icons/userm.jpg',
-  './icons/userv.jpg',
-  './icons/virus.jpeg',
-  './icons/wave2.png',
-  './icons/whatsapp-icon.png',
-  './',
-  './css/style.css',
-  './main.js',
-  './manifest.json',
-  './package-lock.json',
-  './package.json',
-  './sw.js',
+  '/icons/facebook-icon.png',
+  '/icons/instagram-icon.png',
+  '/icons/linkedin-icon.png',
+  '/icons/logo.jpeg',
+  '/icons/nano.jpeg',
+  '/icons/portada.jpeg',
+  '/icons/snapchat-icon.png',
+  '/icons/twitter-icon.png',
+  '/icons/userm.jpg',
+  '/icons/userv.jpg',
+  '/icons/virus.jpeg',
+  '/icons/wave2.png',
+  '/icons/whatsapp-icon.png',
+  '/',
+  '/css/style.css',
+  '/main.js',
+  '/manifest.json',
+  '/package-lock.json',
+  '/package.json',
+  '/sw.js',
 ];
 
 // Instalación del SW
 self.addEventListener('install', e => {
+  console.log('Instalando Service Worker...');
   e.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
+        console.log('Cache abierto');
         return cache.addAll(urlsToCache);
       })
       .then(() => {
@@ -43,6 +45,7 @@ self.addEventListener('install', e => {
 
 // Activar el SW
 self.addEventListener('activate', e => {
+  console.log('Activando Service Worker...');
   const cacheWhitelist = [CACHE_NAME];
 
   e.waitUntil(
@@ -64,22 +67,20 @@ self.addEventListener('activate', e => {
 
 // Recuperar archivos del cache
 self.addEventListener('fetch', e => {
-  console.log('Fetch event for ', e.request.url);
+  console.log('Evento fetch para ', e.request.url);
   e.respondWith(
     caches.match(e.request)
       .then(res => {
         if (res) {
-          console.log('Found ', e.request.url, ' in cache');
+          console.log('Encontrado en cache ', e.request.url);
           return res;
         }
-        console.log('Network request for ', e.request.url);
+        console.log('Solicitud de red para ', e.request.url);
         return fetch(e.request).then(response => {
-          // verifica si se obtuvo una respuesta positiva
-          if(!response || response.status !== 200 || response.type !== 'basic') {
+          if (!response || response.status !== 200 || response.type !== 'basic') {
             return response;
           }
 
-          // Añande la respuesta al cache para futuros pedidos
           const responseToCache = response.clone();
           caches.open(CACHE_NAME)
             .then(cache => {
@@ -89,7 +90,7 @@ self.addEventListener('fetch', e => {
           return response;
         });
       }).catch(err => {
-        console.log('Error fetching and caching new data', err);
+        console.log('Error al obtener y cachear nuevos datos', err);
       })
   );
 });
