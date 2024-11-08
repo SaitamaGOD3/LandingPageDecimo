@@ -46,11 +46,6 @@
         "type": "image/png"
       },
       {
-        "src": "icons/userm.jpg",
-        "sizes": "225x225",
-        "type": "image/jpeg"
-      },
-      {
         "src": "icons/userv.jpg",
         "sizes": "250x250",
         "type": "image/jpeg"

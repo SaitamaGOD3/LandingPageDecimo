@@ -11,7 +11,6 @@ var urlsToCache = [
   '/icons/portada.jpeg',
   '/icons/snapchat-icon.png',
   '/icons/twitter-icon.png',
-  '/icons/userm.jpg',
   '/icons/userv.jpg',
   '/icons/virus.jpeg',
   '/icons/wave2.png',
