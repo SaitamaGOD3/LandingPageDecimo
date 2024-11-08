@@ -46,11 +46,6 @@
         "type": "image/png"
       },
       {
-        "src": "icons/userv.jpg",
-        "sizes": "250x250",
-        "type": "image/jpeg"
-      },
-      {
         "src": "icons/virus.jpeg",
         "sizes": "1599x799",
         "type": "image/jpeg"
