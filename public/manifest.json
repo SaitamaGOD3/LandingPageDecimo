@@ -46,12 +46,12 @@
         "type": "image/png"
     },
     {
-        "src": "icons/user1.jpg",
+        "src": "icons/userm.jpg",
         "sizes": "250x250",
         "type": "image/jpeg"
     },
     {
-        "src": "icons/user2.jpg",
+        "src": "icons/userv.jpg",
         "sizes": "250x250",
         "type": "image/jpeg"
     },
