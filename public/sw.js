@@ -1,5 +1,6 @@
 // Asignar nombre y versión al caché
-const CACHE_NAME = 'v1_cache_103'; 
+const CACHE_VERSION = 'v2'; // Actualiza el número de versión cuando realices cambios significativos
+const CACHE_NAME = `static-${CACHE_VERSION}`;
 
 // Archivos a guardar
 var urlsToCache = [
@@ -25,53 +26,65 @@ var urlsToCache = [
   '/sw.js',
 ];
 
-//Install - Instalación del SW
-self.addEventListener('install', e => {      
-    e.waitUntil(
-        caches.open(CACHE_NAME)   
-        .then(cache => {
-            cache.addAll(urlsToCache) 
-            .then(() =>{
-                self.skipWaiting();
-            })
-        })
-        .catch(err => {
-            console.log('El becario borró la base de datos!', err);
-        })
-    )
+// Evento de instalación del Service Worker
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        // Almacenar todos los archivos en el caché
+        return cache.addAll(urlsToCache)
+          .then(() => {
+            // Indicar al navegador que este nuevo Service Worker está listo
+            self.skipWaiting();
+          });
+      })
+      .catch(error => {
+        console.error('Error al almacenar en caché:', error);
+      })
+  );
 });
 
-//Activar
+// Evento de activación del Service Worker
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cacheName => {
+            if (cacheName !== CACHE_NAME) {
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(() => {
+        // Indicar al navegador que este Service Worker se haga cargo de las solicitudes
+        return self.clients.claim();
+      })
+  );
+});
 
-self.addEventListener('activate', e =>{
-    const cacheWhitelist = [CACHE_NAME]
-    e.waitUntil(
-        caches.keys()
-        .then(cacheNames =>{
-            return Promise.all(
-                cacheNames.map(cacheName =>{
-                    if(cacheWhitelist.indexOf(cacheName) == -1){
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
-        .then(() => {
-            self.clients.claim();
-        })
-    );
-})
+// Evento de solicitud de red
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        if (response) {
+          return response; // Si se encuentra en caché, devolver la respuesta
+        }
 
-//Fetch
-
-self.addEventListener('fetch', e=>{
-    e.respondWith(
-        caches.match(e.request)
-            .then(res => {
-                if(res){
-                    return res;
-                }
-                return fetch(e.request);
-            })
-    );
+        return fetch(event.request)
+          .then(response => {
+            // Almacenar la respuesta en caché (opcional)
+            if (response.status === 200) {
+              cache.put(event.request, response.clone());
+            }
+            return response;
+          })
+          .catch(error => {
+            // Manejar errores de red, por ejemplo, mostrando una página de error personalizada
+            return caches.match('/offline.html');
+          });
+      })
+  );
 });
