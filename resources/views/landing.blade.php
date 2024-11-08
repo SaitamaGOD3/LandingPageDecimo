@@ -95,14 +95,14 @@
     <div class="container text-center">
         <h2>Testimonios</h2>
         <div class="d-flex flex-column align-items-center">
-            <img src="{{ asset('img/userm.jpg') }}" class="img-fluid rounded-circle mb-3" alt="Imagen Usuario1">
+            <img src="{{ asset('img/userm.jpg') }}" class="img-fluid rounded-circle mb-3" alt="Imagen Usuario m">
             <blockquote class="blockquote">
                 <p>"<strong>Healing Nano</strong> no solo es entretenido, sino también increíblemente educativo. He aprendido mucho sobre el sistema inmunológico y la importancia de consultar a un médico, todo mientras juego. ¡Altamente recomendado!"</p>
                 <footer class="blockquote-footer">María González</footer>
             </blockquote>
         </div>
         <div class="d-flex flex-column align-items-center mt-4">
-            <img src="{{ asset('img/userv.jpg') }}" class="img-fluid rounded-circle mb-3" alt="Imagen Usuario2">
+            <img src="{{ asset('img/userv.jpg') }}" class="img-fluid rounded-circle mb-3" alt="Imagen Usuario v">
             <blockquote class="blockquote">
                 <p>"Este juego es una obra maestra. Mis hijos ahora entienden mejor cómo funciona su cuerpo y por qué no deben automedicarse. ¡Un gran éxito!"</p>
                 <footer class="blockquote-footer">Carlos Martínez</footer>
