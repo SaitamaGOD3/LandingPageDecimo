@@ -48,12 +48,12 @@
     {
         "src": "icons/user1.jpg",
         "sizes": "250x250",
-        "type": "image/jpg"
+        "type": "image/jpeg"
     },
     {
         "src": "icons/user2.jpg",
         "sizes": "250x250",
-        "type": "image/jpg"
+        "type": "image/jpeg"
     },
     {
         "src": "icons/virus.jpeg",
