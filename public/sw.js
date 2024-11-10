@@ -19,7 +19,6 @@ var urlsToCache = [
   '/icons/whatsapp-icon.png',
   '/',
   '/css/style.css',
-  '/main.js',
   '/manifest.json',
   '/package-lock.json',
   '/package.json',

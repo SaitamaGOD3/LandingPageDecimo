@@ -51,7 +51,7 @@
             <div class="container d-flex flex-column align-items-center">
                 <img src="{{ asset('img/logo.jpeg') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top mb-2">
                 <h1>Healing Nano</h1>
-                <h2>¡Conocesnos con la ayuda de nanobots!</h2>
+                <h2>¡Conocenos con la ayuda de nanobots!</h2>
                 <p class="lead">Un viaje educativo que te enseña la importancia de consultar a un médico y evitar la automedicación.</p>
                 <p class="mt-3"><strong>Únete a nosotros y aprende cómo nuestros nanobots pueden ayudarte a saber como mantenerte saludable y seguro.</strong></p>
             </div>
