@@ -74,14 +74,17 @@ self.addEventListener('fetch', event => {
         }
 
         return fetch(event.request)
-          .then(response => {
-            // Almacenar la respuesta en caché (opcional)
-            if (response.status === 200) {
-              cache.put(event.request, response.clone());
+          .then(networkResponse => {
+            // Verifica que la respuesta sea válida antes de guardarla en caché
+            if (networkResponse && networkResponse.status === 200) {
+              return caches.open(CACHE_NAME).then(cache => {
+                cache.put(event.request, networkResponse.clone());
+                return networkResponse;
+              });
             }
-            return response;
+            return networkResponse;
           })
-          .catch(error => {
+          .catch(() => {
             // Manejar errores de red, por ejemplo, mostrando una página de error personalizada
             return caches.match('/offline.html');
           });
