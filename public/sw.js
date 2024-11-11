@@ -1,5 +1,5 @@
 // Asignar nombre y versión al caché
-const CACHE_VERSION = 'v5'; // Actualiza el número de versión cuando realices cambios significativos
+const CACHE_VERSION = 'v6'; // Actualiza el número de versión cuando realices cambios significativos
 const CACHE_NAME = `static-${CACHE_VERSION}`;
 
 // Archivos a guardar
@@ -20,11 +20,8 @@ var urlsToCache = [
   '/',
   '/css/style.css',
   '/manifest.json',
-  '/package-lock.json',
   '/package.json',
   '/sw.js',
-  '/main.js',
-  '/offline.html', // Agregar archivo offline si se desea
 ];
 
 // Evento de instalación del Service Worker
