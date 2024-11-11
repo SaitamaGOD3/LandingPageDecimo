@@ -1,74 +1,24 @@
 {
-    "name": "Test PWA",
+    "name": "NanoTest",
     "short_name": "Test",
     "description": "Testing testing, 1, 2, 3",
     "start_url": "/",
     "scope": "/",
     "icons": [
       {
-        "src": "img/facebook-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/instagram-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/linkedin-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/logo.jpeg",
-        "sizes": "500x500",
+        "src": "img/logo1.jpeg",
+        "sizes": "613x529",
         "type": "image/jpeg"
       },
       {
-        "src": "img/nano.jpeg",
-        "sizes": "1600x800",
+        "src": "img/logo2.jpeg",
+        "sizes": "512x512",
         "type": "image/jpeg"
       },
       {
-        "src": "img/portada.jpeg",
-        "sizes": "1599x799",
+        "src": "img/logo3.jpeg",
+        "sizes": "192x192",
         "type": "image/jpeg"
-      },
-      {
-        "src": "img/snapchat-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/twitter-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/userm.jpg",
-        "sizes": "225x225",
-        "type": "image/jpg"
-      },
-      {
-        "src": "img/userv.jpg",
-        "sizes": "250x250",
-        "type": "image/jpg"
-      },
-      {
-        "src": "img/virus.jpeg",
-        "sizes": "1599x799",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "icons/wave2.png",
-        "sizes": "1900x174",
-        "type": "image/png"
-      },
-      {
-        "src": "img/whatsapp-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
       }
     ],
     "theme_color": "#333",
