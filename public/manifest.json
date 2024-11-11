@@ -4,7 +4,7 @@
     "description": "Testing testing, 1, 2, 3",
     "start_url": "/",
     "scope": "/",
-    "img": [
+    "icons": [
       {
         "src": "img/facebook-icon.png",
         "sizes": "360x360",
