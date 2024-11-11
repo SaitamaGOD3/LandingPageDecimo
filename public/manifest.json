@@ -6,57 +6,57 @@
     "scope": "/",
     "icons": [
       {
-        "src": "icons/facebook-icon.png",
+        "src": "img/facebook-icon.png",
         "sizes": "360x360",
         "type": "image/png"
       },
       {
-        "src": "icons/instagram-icon.png",
+        "src": "img/instagram-icon.png",
         "sizes": "360x360",
         "type": "image/png"
       },
       {
-        "src": "icons/linkedin-icon.png",
+        "src": "img/linkedin-icon.png",
         "sizes": "360x360",
         "type": "image/png"
       },
       {
-        "src": "icons/logo.jpeg",
+        "src": "img/logo.jpeg",
         "sizes": "500x500",
         "type": "image/jpeg"
       },
       {
-        "src": "icons/nano.jpeg",
+        "src": "img/nano.jpeg",
         "sizes": "1600x800",
         "type": "image/jpeg"
       },
       {
-        "src": "icons/portada.jpeg",
+        "src": "img/portada.jpeg",
         "sizes": "1599x799",
         "type": "image/jpeg"
       },
       {
-        "src": "icons/snapchat-icon.png",
+        "src": "img/snapchat-icon.png",
         "sizes": "360x360",
         "type": "image/png"
       },
       {
-        "src": "icons/twitter-icon.png",
+        "src": "img/twitter-icon.png",
         "sizes": "360x360",
         "type": "image/png"
       },
       {
-        "src": "icons/userm.jpg",
+        "src": "img/userm.jpg",
         "sizes": "225x225",
-        "type": "image/jpeg"
+        "type": "image/jpg"
       },
       {
-        "src": "icons/userv.jpg",
+        "src": "img/userv.jpg",
         "sizes": "250x250",
-        "type": "image/jpeg"
+        "type": "image/jpg"
       },
       {
-        "src": "icons/virus.jpeg",
+        "src": "img/virus.jpeg",
         "sizes": "1599x799",
         "type": "image/jpeg"
       },
@@ -66,7 +66,7 @@
         "type": "image/png"
       },
       {
-        "src": "icons/whatsapp-icon.png",
+        "src": "img/whatsapp-icon.png",
         "sizes": "360x360",
         "type": "image/png"
       }
