@@ -8,6 +8,7 @@ var urlsToCache = [
   '/img/instagram-icon.png',
   '/img/linkedin-icon.png',
   '/img/logo.jpeg',
+  '/img/logo1.jpeg',
   '/img/nano.jpeg',
   '/img/portada.jpeg',
   '/img/snapchat-icon.png',
