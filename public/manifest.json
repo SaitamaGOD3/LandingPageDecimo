@@ -1,84 +1,83 @@
 {
-    "name": "NanoTest",
-    "short_name": "Test",
-    "description": "Testing testing, 1, 2, 3",
-    "start_url": "/",
-    "scope": "/",
-    "icons": [
-      {
-        "src": "img/logo1.jpeg",
-        "sizes": "613x529",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "img/logo.jpeg",
-        "sizes": "350x350",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "img/facebook-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/instagram-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/linkedin-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/nano.jpeg",
-        "sizes": "1600x800",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "img/portada.jpeg",
-        "sizes": "1599x799",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "img/snapchat-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/twitter-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      },
-      {
-        "src": "img/userm.jpg",
-        "sizes": "225x225",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "img/userv.jpg",
-        "sizes": "250x250",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "img/virus.jpeg",
-        "sizes": "1599x799",
-        "type": "image/jpeg"
-      },
-      {
-        "src": "img/wave2.png",
-        "sizes": "1900x174",
-        "type": "image/png"
-      },
-      {
-        "src": "img/whatsapp-icon.png",
-        "sizes": "360x360",
-        "type": "image/png"
-      }
-    ],
-    "theme_color": "#333",
-    "background_color": "#f4f4f4",
-    "display": "fullscreen",
-    "orientation": "portrait"
-  }
-  
+  "name": "NanoTest",
+  "short_name": "Test",
+  "description": "Testing testing, 1, 2, 3",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "img/logo1.jpeg",
+      "sizes": "613x529",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "img/logo.jpeg",
+      "sizes": "350x350",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "img/facebook-icon.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    },
+    {
+      "src": "img/instagram-icon.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    },
+    {
+      "src": "img/linkedin-icon.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    },
+    {
+      "src": "img/snapchat-icon.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    },
+    {
+      "src": "img/twitter-icon.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    },
+    {
+      "src": "img/whatsapp-icon.png",
+      "sizes": "360x360",
+      "type": "image/png"
+    },
+    {
+      "src": "img/nano.jpeg",
+      "sizes": "1600x800",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "img/portada.jpeg",
+      "sizes": "1599x799",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "img/virus.jpeg",
+      "sizes": "1599x799",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "img/wave2.png",
+      "sizes": "1900x174",
+      "type": "image/png"
+    },
+    {
+      "src": "img/userm.jpg",
+      "sizes": "225x225",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "img/userv.jpg",
+      "sizes": "250x250",
+      "type": "image/jpeg"
+    }
+  ],
+  "theme_color": "#333",
+  "background_color": "#f4f4f4",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
