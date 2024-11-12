@@ -6,14 +6,10 @@
   "scope": "/",
   "icons": [
     {
-      "src": "img/logo.jpeg",
-      "sizes": "350x350",
-      "type": "image/jpeg"
-    },
-    {
-      "src": "img/logo1.jpeg",
+      "src": "img/logo1.png",
       "sizes": "613x529",
-      "type": "image/jpeg"
+      "type": "image/png",
+      "purpose":"any"
     }
   ],
   "theme_color": "#333",
