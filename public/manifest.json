@@ -7,9 +7,10 @@
   "icons": [
     {
       "src": "img/logo1.png",
-      "sizes": "613x529",
+      "sizes": "512x512",
       "type": "image/png",
-      "purpose":"any"
+      "purpose":"any",
+      "attribute":"any"
     }
   ],
   "theme_color": "#333",
