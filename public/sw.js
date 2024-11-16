@@ -1,14 +1,14 @@
 // Asignar nombre y versión al caché
-const CACHE_VERSION = 'v6'; // Actualiza el número de versión cuando realices cambios significativos
+const CACHE_VERSION = 'v6'; // Actualiza este número cuando cambies el caché
 const CACHE_NAME = `static-${CACHE_VERSION}`;
 
-// Archivos a guardar
-var urlsToCache = [
+// Archivos que serán cacheados
+const urlsToCache = [
   '/img/facebook-icon.png',
   '/img/instagram-icon.png',
   '/img/linkedin-icon.png',
   '/img/logo.jpeg',
-  '/img/logo1.jpeg',
+  '/img/logo1.png',
   '/img/nano.jpeg',
   '/img/portada.jpeg',
   '/img/snapchat-icon.png',
@@ -27,48 +27,57 @@ var urlsToCache = [
 
 // Evento de instalación del Service Worker
 self.addEventListener('install', event => {
+  console.log('Service Worker: Instalando...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        return cache.addAll(urlsToCache)
-          .then(() => self.skipWaiting()) // Service Worker listo
-          .catch(error => {
-            console.error('Error al almacenar en caché:', error);
-          });
+        console.log('Archivos cacheados correctamente');
+        return cache.addAll(urlsToCache);
       })
+      .catch(error => console.error('Error al almacenar en caché:', error))
   );
+  self.skipWaiting(); // Hacer que el SW tome control inmediatamente
 });
 
 // Evento de activación del Service Worker
 self.addEventListener('activate', event => {
+  console.log('Service Worker: Activado');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => Promise.all(
         cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName); // Borrar cachés antiguos
+            console.log(`Borrando caché antiguo: ${cacheName}`);
+            return caches.delete(cacheName);
           }
         })
       ))
-      .then(() => self.clients.claim()) // Tomar control inmediato
+      .then(() => self.clients.claim()) // Tomar control inmediato de la página
   );
 });
 
-// Evento de solicitud de red
+// Evento de interceptar solicitudes de red
 self.addEventListener('fetch', event => {
+  console.log('Interceptando solicitud:', event.request.url);
   event.respondWith(
     caches.match(event.request)
-      .then(response => response || fetch(event.request)
-        .then(networkResponse => {
-          if (networkResponse && networkResponse.status === 200) {
-            return caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, networkResponse.clone());
-              return networkResponse;
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => caches.match('/offline.html')) // Opcional
-      )
+      .then(response => {
+        // Devuelve el recurso desde la caché si existe
+        if (response) {
+          return response;
+        }
+        // Si no está en caché, obtén el recurso de la red
+        return fetch(event.request)
+          .then(networkResponse => {
+            // Almacenar en caché el nuevo recurso si es válido
+            if (networkResponse && networkResponse.status === 200) {
+              caches.open(CACHE_NAME).then(cache => {
+                cache.put(event.request, networkResponse.clone());
+              });
+            }
+            return networkResponse;
+          })
+          .catch(() => caches.match('/offline.html')); // Recurso de fallback
+      })
   );
 });
