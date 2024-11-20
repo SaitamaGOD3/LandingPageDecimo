@@ -59,11 +59,10 @@ header.custom-header h2 {
 }
 
 .flags {
-    width: auto; /* Cambiado de 30px a auto para que ajuste según el contenido */
     display: flex; /* Mantener el layout flex */
     align-items: center; /* Centrar verticalmente */
     justify-content: space-between; /* Espaciar uniformemente */
-    gap: 10px; /* Añade espacio entre las banderas */
+    gap: 2px; /* Añade espacio entre las banderas */
 }
 
 .flags_item {
@@ -76,7 +75,7 @@ header.custom-header h2 {
 }
 
 header.custom-header img {
-    width: auto;
+    width: 80px;
     height: auto;
     border-radius: 50%;
     border: 3px solid #f9fafc;
