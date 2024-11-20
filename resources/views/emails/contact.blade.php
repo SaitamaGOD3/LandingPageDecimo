@@ -6,7 +6,7 @@
     <title>Nuevo Mensaje de Contacto</title>
 </head>
 <body>
-    <script src="translate.js"></script>
+    
     <h2>Nuevo mensaje de contacto</h2>
 
     <p data-section="contact_us" data-value="form.name"><strong>Nombre:</strong> {{ $data['name'] }}</p>
@@ -15,5 +15,6 @@
 
     <br>
     <p>Este mensaje fue enviado desde el formulario de contacto de la landing page.</p>
+    <script src="translate.js"></script>
 </body>
 </html>
