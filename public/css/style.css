@@ -67,12 +67,12 @@ header.custom-header h2 {
 
 .flags_item{
     width: 30px;
-    margin-left: 10px;
 }
 
 .flags_img{
     display: block;
     cursor: pointer;  
+    margin: 5px;
 }
 
 header.custom-header img {
