@@ -65,7 +65,7 @@ header.custom-header h2 {
 }
 
 .flags_item {
-    width: 30px; /* Mantén el ancho fijo de cada bandera */
+    width: 10px; /* Mantén el ancho fijo de cada bandera */
 }
 
 .flags_img {
