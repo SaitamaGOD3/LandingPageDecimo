@@ -62,7 +62,6 @@ header.custom-header h2 {
     display: flex; /* Mantener el layout flex */
     align-items: center; /* Centrar verticalmente */
     justify-content: space-between; /* Espaciar uniformemente */
-    gap: 2px; /* Añade espacio entre las banderas */
 }
 
 .flags_item {
