@@ -59,10 +59,11 @@ header.custom-header h2 {
 }
 
 .flags{
-    width: 30px;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .flags_item{
