@@ -17,7 +17,7 @@
 <body>
     <!-- Contenido de tu página -->
     <script src="main.js"></script>
-    
+    <script src="translate.js"></script>
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg custom-navbar">
@@ -64,7 +64,6 @@
                 <p class="lead"  data-section="header" data-value="lead">Un viaje educativo que te enseña la importancia de consultar a un médico y evitar la automedicación.</p>
                 <p class="mt-3"  data-section="header" data-value="cta"><strong>Únete a nosotros y aprende cómo nuestros nanobots pueden ayudarte a saber como mantenerte saludable y seguro.</strong></p>
             </div>
-            <script src="translate.js"></script>
         </header>
 
     <!-- Carousel -->
