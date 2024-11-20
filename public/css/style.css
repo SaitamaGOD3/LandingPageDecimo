@@ -58,21 +58,21 @@ header.custom-header h2 {
     color: #e0f7fa; /* Cambiado a un tono más claro */
 }
 
-.flags{
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.flags {
+    width: auto; /* Cambiado de 30px a auto para que ajuste según el contenido */
+    display: flex; /* Mantener el layout flex */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: space-between; /* Espaciar uniformemente */
+    gap: 10px; /* Añade espacio entre las banderas */
 }
 
-.flags_item{
-    width: 30px;
+.flags_item {
+    width: 30px; /* Mantén el ancho fijo de cada bandera */
 }
 
-.flags_img{
-    display: block;
-    cursor: pointer;  
-    margin: 5px;
+.flags_img {
+    display: block; /* Mantener este estilo para comportamiento de bloque */
+    cursor: pointer; /* Mantener el cursor en modo "clickeable" */
 }
 
 header.custom-header img {
