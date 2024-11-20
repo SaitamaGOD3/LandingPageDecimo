@@ -64,11 +64,11 @@
                 <p class="mt-3"  data-section="header" data-value="cta"><strong>Únete a nosotros y aprende cómo nuestros nanobots pueden ayudarte a saber como mantenerte saludable y seguro.</strong></p>
             </div>
         </header>
-        
+
         <script>
             // Función para cambiar el idioma
             const changeLanguage = async (language) => {
-                const response = await fetch(`./language/${language}.json`);
+                const response = await fetch(`./${language}.json`);
                 const translations = await response.json();
 
             // Recorre cada elemento con data-section y data-value
