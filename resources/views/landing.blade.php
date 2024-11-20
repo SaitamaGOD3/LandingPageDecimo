@@ -47,34 +47,6 @@
         </nav>
 
         <!-- Header -->
-        <script>
-                // Función para cambiar el idioma
-                const changeLanguage = async (language) => {
-                    const response = await fetch(`./language/${language}.json`);
-                    const translations = await response.json();
-
-                // Recorre cada elemento con data-section y data-value
-                    document.querySelectorAll('[data-section]').forEach(element => {
-                        const section = element.getAttribute('data-section');
-                        const value = element.getAttribute('data-value');
-
-                // Actualiza el contenido del elemento
-                        if (section && value && translations[section] && translations[section][value]) {
-                            element.textContent = translations[section][value];
-                        }
-                    });
-                };
-
-            // Evento para cambiar el idioma cuando se hace clic en una bandera
-                document.getElementById('flags').addEventListener('click', (e) => {
-                    const language = e.target.parentElement.dataset.language;
-                    if (language) {
-                        changeLanguage(language);
-                    }
-                });
-
-        </script>
-
         <header class="custom-header text-white text-center p-4" id="main-header">
             <div id="flags" class="flags">
                 <div class="flags_item" data-language="mx">
@@ -92,7 +64,35 @@
                 <p class="mt-3"  data-section="header" data-value="cta"><strong>Únete a nosotros y aprende cómo nuestros nanobots pueden ayudarte a saber como mantenerte saludable y seguro.</strong></p>
             </div>
         </header>
-    
+        
+        <script>
+            // Función para cambiar el idioma
+            const changeLanguage = async (language) => {
+                const response = await fetch(`./language/${language}.json`);
+                const translations = await response.json();
+
+            // Recorre cada elemento con data-section y data-value
+                document.querySelectorAll('[data-section]').forEach(element => {
+                    const section = element.getAttribute('data-section');
+                    const value = element.getAttribute('data-value');
+
+            // Actualiza el contenido del elemento
+                    if (section && value && translations[section] && translations[section][value]) {
+                        element.textContent = translations[section][value];
+                    }
+                });
+            };
+
+        // Evento para cambiar el idioma cuando se hace clic en una bandera
+            document.getElementById('flags').addEventListener('click',
+             (e) => { const language = e.target.parentElement.dataset.language;
+                if (language) 
+                {
+                    changeLanguage(language);
+                }
+            });
+    </script>
+
     <!-- Carousel -->
     <section class="mt-4">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
