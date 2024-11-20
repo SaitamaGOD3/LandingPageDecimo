@@ -28,32 +28,68 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#about-us">About Us</a>
+                            <a class="nav-link" href="#about-us" data-section="navbar" data-value="about_us">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#proposito">Propuesta de Valor</a>
+                            <a class="nav-link" href="#proposito" data-section="navbar" data-value="value_proposition">Propuesta de Valor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#testimonio">Testimonios</a>
+                            <a class="nav-link" href="#testimonio" data-section="navbar" data-value="testimonials">Testimonios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact-map">Contáctanos</a>
+                            <a class="nav-link" href="#contact-map" data-section="navbar" data-value="contact_us">Contáctanos</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <!-- Image between Navbar and Header -->
-            <img src="{{ asset('img/wave2.png') }}" alt="Wave Image" class="wave-image">
+            <img src="{{ asset('img/wave2.svg') }}" alt="Wave Image" class="wave-image">
         </nav>
 
         <!-- Header -->
+        <script>
+                // Función para cambiar el idioma
+                const changeLanguage = async (language) => {
+                    const response = await fetch(`./language/${language}.json`);
+                    const translations = await response.json();
+
+                // Recorre cada elemento con data-section y data-value
+                    document.querySelectorAll('[data-section]').forEach(element => {
+                        const section = element.getAttribute('data-section');
+                        const value = element.getAttribute('data-value');
+
+                // Actualiza el contenido del elemento
+                        if (section && value && translations[section] && translations[section][value]) {
+                            element.textContent = translations[section][value];
+                        }
+                    });
+                };
+
+            // Evento para cambiar el idioma cuando se hace clic en una bandera
+                document.getElementById('flags').addEventListener('click', (e) => {
+                    const language = e.target.parentElement.dataset.language;
+                    if (language) {
+                        changeLanguage(language);
+                    }
+                });
+
+        </script>
+
         <header class="custom-header text-white text-center p-4" id="main-header">
+            <div id="flags" class="flags">
+                <div class="flags_item" data-language="mx">
+                    <img src="{{ asset('img/mx.svg') }}" alt="bandera mx" class="bandera-mx">
+                </div>
+                <div class="flags_item" data-language="mx">
+                    <img src="{{ asset('img/us.svg') }}" alt="bandera us" class="bandera-us">
+                </div>
+            </div>
             <div class="container d-flex flex-column align-items-center">
                 <img src="{{ asset('img/logo.jpeg') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top mb-2">
-                <h1>Healing Nano</h1>
-                <h2>¡Conocenos con la ayuda de nanobots!</h2>
-                <p class="lead">Un viaje educativo que te enseña la importancia de consultar a un médico y evitar la automedicación.</p>
-                <p class="mt-3"><strong>Únete a nosotros y aprende cómo nuestros nanobots pueden ayudarte a saber como mantenerte saludable y seguro.</strong></p>
+                <h1  data-section="header" data-value="title">Healing Nano</h1>
+                <h2 data-section="header" data-value="subtitle">¡Conocenos con la ayuda de nanobots!</h2>
+                <p class="lead"  data-section="header" data-value="lead">Un viaje educativo que te enseña la importancia de consultar a un médico y evitar la automedicación.</p>
+                <p class="mt-3"  data-section="header" data-value="cta"><strong>Únete a nosotros y aprende cómo nuestros nanobots pueden ayudarte a saber como mantenerte saludable y seguro.</strong></p>
             </div>
         </header>
     
@@ -77,35 +113,35 @@
     <!-- About Us -->
     <section id="about-us" class="bg-light py-5 ">
         <div class="container text-center">
-            <h2>About Us</h2>
-            <p>En <strong>Healing Nano</strong>, somos un equipo apasionado de desarrolladores y científicos que han unido sus fuerzas para crear una experiencia de juego única e informativa. Nuestro juego te permite controlar un nanobot en su misión dentro del cuerpo humano, luchando contra enfermedades y aprendiendo sobre la importancia de la consulta médica profesional en el proceso. Nuestra misión es educar y entretener al mismo tiempo, brindando a los jugadores una experiencia inmersiva y educativa sobre la salud y la prevención de la automedicación.</p>
+            <h2  data-section="about_us" data-value="title">About Us</h2>
+            <p  data-section="about_us" data-value="description">En <strong>Healing Nano</strong>, somos un equipo apasionado de desarrolladores y científicos que han unido sus fuerzas para crear una experiencia de juego única e informativa. Nuestro juego te permite controlar un nanobot en su misión dentro del cuerpo humano, luchando contra enfermedades y aprendiendo sobre la importancia de la consulta médica profesional en el proceso. Nuestra misión es educar y entretener al mismo tiempo, brindando a los jugadores una experiencia inmersiva y educativa sobre la salud y la prevención de la automedicación.</p>
         </div>
     </section>    
 
     <!-- Proposito -->
     <section id="proposito" class="py-5">
         <div class="container text-center">
-            <h2>Propuesta de Valor</h2>
-            <p>En <strong>Healing Nano</strong>, ofrecemos una experiencia de juego inigualable que combina educación y entretenimiento. A través de nuestra plataforma, los jugadores no solo se divierten enfrentándose a diversos patógenos y enfermedades, sino que también aprenden sobre la biología humana y la importancia de buscar atención médica profesional en lugar de automedicarse. Nuestro enfoque innovador y educativo distingue a <strong>Healing Nano</strong> de otros juegos en el mercado, haciendo que aprender sobre salud y prevención sea divertido y emocionante.</p>
+            <h2 data-section="value_proposition" data-value="title">Propuesta de Valor</h2>
+            <p data-section="value_proposition" data-value="description">En <strong>Healing Nano</strong>, ofrecemos una experiencia de juego inigualable que combina educación y entretenimiento. A través de nuestra plataforma, los jugadores no solo se divierten enfrentándose a diversos patógenos y enfermedades, sino que también aprenden sobre la biología humana y la importancia de buscar atención médica profesional en lugar de automedicarse. Nuestro enfoque innovador y educativo distingue a <strong>Healing Nano</strong> de otros juegos en el mercado, haciendo que aprender sobre salud y prevención sea divertido y emocionante.</p>
         </div>
     </section>    
 
    <!-- Testimonio -->
 <section id="testimonio" class="bg-light py-5">
     <div class="container text-center">
-        <h2>Testimonios</h2>
+        <h2 data-section="testimonials" data-value="title">Testimonios</h2>
         <div class="d-flex flex-column align-items-center">
             <img src="{{ asset('img/userm.jpg') }}" class="img-fluid rounded-circle mb-3" alt="Imagen Usuario m">
             <blockquote class="blockquote">
-                <p>"<strong>Healing Nano</strong> no solo es entretenido, sino también increíblemente educativo. He aprendido mucho sobre el sistema inmunológico y la importancia de consultar a un médico, todo mientras juego. ¡Altamente recomendado!"</p>
-                <footer class="blockquote-footer">María González</footer>
+                <p>"<strong data-section="testimonials" data-value="testmony_1">Healing Nano</strong> no solo es entretenido, sino también increíblemente educativo. He aprendido mucho sobre el sistema inmunológico y la importancia de consultar a un médico, todo mientras juego. ¡Altamente recomendado!"</p>
+                <footer class="blockquote-footer" data-section="testimonials" data-value="author_1">María González</footer>
             </blockquote>
         </div>
         <div class="d-flex flex-column align-items-center mt-4">
             <img src="{{ asset('img/userv.jpg') }}" class="img-fluid rounded-circle mb-3" alt="Imagen Usuario v">
             <blockquote class="blockquote">
-                <p>"Este juego es una obra maestra. Mis hijos ahora entienden mejor cómo funciona su cuerpo y por qué no deben automedicarse. ¡Un gran éxito!"</p>
-                <footer class="blockquote-footer">Carlos Martínez</footer>
+                <p data-section="testimonials" data-value="testimony_2">"Este juego es una obra maestra. Mis hijos ahora entienden mejor cómo funciona su cuerpo y por qué no deben automedicarse. ¡Un gran éxito!"</p>
+                <footer class="blockquote-footer" data-section="testimonials" data-value="author_2">Carlos Martínez</footer>
             </blockquote>
         </div>
     </div>
@@ -117,23 +153,23 @@
         <div class="row">
             <!-- Contact Form -->
             <div class="col-md-6">
-                <h2 class="text-center">Contáctanos</h2>
-                <p class="text-center">¿Tienes alguna pregunta o comentario sobre <strong>Healing Nano</strong>? Nos encantaría saber de ti. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
+                <h2 class="text-center" data-section="contact_us" data-value="title">Contáctanos</h2>
+                <p class="text-center" data-section="contact_us" data-value="description">¿Tienes alguna pregunta o comentario sobre <strong>Healing Nano</strong>? Nos encantaría saber de ti. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
                 <form id="contact-form" action="{{ route('contact.submit') }}" method="POST" autocomplete="off">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
+                        <label for="name" class="form-label" data-section="contact_us" data-value="form.name">Nombre</label>
                         <input type="text" name="name" class="form-control" id="name" required autocomplete="off">
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <label for="email" class="form-label"data-section="contact_us" data-value="form.email">Correo Electrónico</label>
                         <input type="email" name="email" class="form-control" id="email" required autocomplete="off">
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label">Mensaje</label>
+                        <label for="message" class="form-label" data-section="contact_us" data-value="form.message">Mensaje</label>
                         <textarea name="message" class="form-control" id="message" required autocomplete="off"></textarea>
                     </div>
-                    <button type="submit" class="btn custom-btn w-100">Enviar</button>
+                    <button type="submit" class="btn custom-btn w-100" data-section="contact_us" data-value="form.submite">Enviar</button>
                 </form>
             </div>
             <!-- Map -->
@@ -156,7 +192,7 @@
                         <img src="{{ asset('img/twitter-icon.png') }}" alt="twitter" class="social-icon">
                         <img src="{{ asset('img/whatsapp-icon.png') }}" alt="whatsapp" class="social-icon">
                     </div>
-                    <p>&copy; 2024 Healing Nano. Todos los derechos reservados.</p>
+                    <p data-value="rights_reserved">&copy; 2024 Healing Nano. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>

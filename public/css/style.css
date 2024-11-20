@@ -58,6 +58,22 @@ header.custom-header h2 {
     color: #e0f7fa; /* Cambiado a un tono más claro */
 }
 
+.flags{
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flags_item{
+    width: 30px;
+}
+
+.flags_img{
+    display: block;
+    cursor: pointer;  
+}
+
 header.custom-header img {
     width: 80px;
     height: auto;

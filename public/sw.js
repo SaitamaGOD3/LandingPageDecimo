@@ -18,10 +18,14 @@ const urlsToCache = [
   '/img/virus.jpeg',
   '/img/wave2.png',
   '/img/whatsapp-icon.png',
+  '/img/mx.svg',
+  '/img/us.svg',
   '/',
   '/css/style.css',
   '/manifest.json',
   '/sw.js',
+  '/mx.json',
+  '/us.json',
 ];
 
 // Evento de instalación del Service Worker

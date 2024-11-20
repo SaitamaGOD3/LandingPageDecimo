@@ -1,0 +1,43 @@
+{
+    "navbar": {
+      "about_us": "About Us",
+      "value_proposition": "Value Proposition",
+      "testimonials": "Testimonials",
+      "contact_us": "Contact Us"
+    },
+    "header": {
+      "title": "Healing Nano",
+      "subtitle": "Meet us with the help of nanobots!",
+      "lead": "An educational journey that teaches you the importance of consulting a doctor and avoiding self-medication.",
+      "cta": "Join us and learn how our nanobots can help you stay healthy and safe."
+    },
+    "about_us": {
+      "title": "About Us",
+      "description": "At Healing Nano, we are a passionate team of developers and scientists who have joined forces to create a unique and informative gaming experience. Our game allows you to control a nanobot on its mission inside the human body, fighting diseases and learning about the importance of professional medical consultation in the process. Our mission is to educate and entertain at the same time, providing players with an immersive and educational experience about health and the prevention of self-medication."
+    },
+    "value_proposition": {
+      "title": "Value Proposition",
+      "description": "At Healing Nano, we offer an unparalleled gaming experience that combines education and entertainment. Through our platform, players not only have fun facing various pathogens and diseases, but they also learn about human biology and the importance of seeking professional medical attention instead of self-medicating. Our innovative and educational approach sets Healing Nano apart from other games on the market, making learning about health and prevention fun and exciting."
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "testimony_1": "Healing Nano is not only entertaining but also incredibly educational. I have learned a lot about the immune system and the importance of consulting a doctor, all while playing. Highly recommended!",
+      "author_1": "María González",
+      "testimony_2": "This game is a masterpiece. My children now better understand how their bodies work and why they should not self-medicate. A great success!",
+      "author_2": "Carlos Martínez"
+    },
+    "contact_us": {
+      "title": "Contact Us",
+      "description": "Do you have any questions or comments about Healing Nano? We would love to hear from you. Complete the form below and we will get back to you as soon as possible.",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Submit"
+      }
+    },
+    "footer": {
+      "rights_reserved": "© 2024 Healing Nano. All rights reserved."
+    }
+  }
+  
