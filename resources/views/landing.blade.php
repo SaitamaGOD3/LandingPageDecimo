@@ -43,7 +43,7 @@
                 </div>
             </div>
             <!-- Image between Navbar and Header -->
-            <img src="{{ asset('img/wave2.svg') }}" alt="Wave Image" class="wave-image">
+            <img src="{{ asset('img/wave2.png') }}" alt="Wave Image" class="wave-image">
         </nav>
 
         <!-- Header -->
