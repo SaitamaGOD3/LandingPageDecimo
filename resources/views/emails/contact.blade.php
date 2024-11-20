@@ -6,7 +6,6 @@
     <title>Nuevo Mensaje de Contacto</title>
 </head>
 <body>
-    <script src="translate.js"></script>
     <h2>Nuevo mensaje de contacto</h2>
 
     <p><strong>Correo electrónico:</strong> {{ $data['email'] }}</p>
