@@ -11,8 +11,8 @@ const changeLanguage = async (language) => {
             const value = element.getAttribute('data-value');
 
             if (section && value && translations[section] && translations[section][value]) {
-                element.textContent = translations[section][value];
-            }
+                element.innerHTML = translations[section][value];
+            }            
         });
     } catch (error) {
         console.error("Error al cambiar el idioma:", error);
