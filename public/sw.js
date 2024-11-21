@@ -47,6 +47,7 @@ self.addEventListener('activate', event => {
       .then(cacheNames => {
         return Promise.all(
           cacheNames.map(cacheName => {
+            // Borra cachés antiguas si no coinciden con la nueva versión
             if (cacheName !== CACHE_NAME) {
               console.log(`Eliminando caché antiguo: ${cacheName}`);
               return caches.delete(cacheName);
@@ -55,7 +56,7 @@ self.addEventListener('activate', event => {
         );
       })
   );
-  self.clients.claim(); // Tomar control de las pestañas abiertas
+  self.clients.claim(); // Toma control de las pestañas abiertas
 });
 
 // Evento fetch
@@ -63,8 +64,20 @@ self.addEventListener('fetch', event => {
   console.log('Solicitando recurso:', event.request.url);
   event.respondWith(
     caches.match(event.request)
-      .then(response => response || fetch(event.request))
-      .catch(() => caches.match('/offline.html'))
+      .then(response => {
+        // Si el recurso está en caché, lo devuelves, si no, haces una solicitud
+        return response || fetch(event.request)
+          .then(networkResponse => {
+            // Actualiza el caché con la respuesta de la red para futuras solicitudes
+            if (networkResponse && networkResponse.status === 200) {
+              caches.open(CACHE_NAME)
+                .then(cache => {
+                  cache.put(event.request, networkResponse.clone());
+                });
+            }
+            return networkResponse;
+          });
+      })
+      .catch(() => caches.match('/offline.html')) // Si no hay conexión, muestra una página offline
   );
 });
-
