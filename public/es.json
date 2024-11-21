@@ -40,13 +40,15 @@
       "rights_reserved": "© 2024 Healing Nano. Todos los derechos reservados."
     },
     "alert": {
-      "form": {
-        "successMessage": "Tu mensaje ha sido enviado correctamente.",
-        "errorMessage": "Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo."
-      },
-      "buttons": {
-        "confirm": "Aceptar"
-      }
+    "form": {
+      "successMessage": "Formulario enviado",
+      "successText": "Tu mensaje ha sido enviado correctamente.",
+      "errorMessage": "Error",
+      "errorText": "Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo."
+    },
+    "buttons": {
+      "confirm": "Aceptar"
+    }
     }
 }
     

@@ -174,16 +174,15 @@
 // Función para cambiar el idioma
 const changeLanguage = async (language) => {
     try {
-        localStorage.setItem('language', language);
+        localStorage.setItem('language', language); // Guardar el idioma seleccionado
         const response = await fetch(`./${language}.json`);
-
         if (!response.ok) {
             throw new Error(`No se pudo cargar el archivo de traducción: ${language}.json`);
         }
 
         const translations = await response.json();
 
-        // Aplicar las traducciones a los elementos de la página
+        // Aplicar traducciones a los elementos de la página
         document.querySelectorAll('[data-section]').forEach(element => {
             const section = element.getAttribute('data-section');
             const value = element.getAttribute('data-value');
@@ -193,21 +192,21 @@ const changeLanguage = async (language) => {
             }
         });
 
-        // Guardar las traducciones de alertas globalmente
+        // Almacenar las traducciones de alertas globalmente
         if (translations.alert) {
             window.alertTranslations = translations.alert;
         } else {
-            window.alertTranslations = {};
+            window.alertTranslations = {}; // Asegurarse de que siempre exista el objeto alert
         }
 
     } catch (error) {
         console.error('Error al cambiar el idioma:', error);
-        alert('Hubo un problema al cargar las traducciones.');  // Alerta en caso de error
+        alert('Hubo un problema al cargar las traducciones.'); // Alerta si falla
     }
 };
 
-// Cargar idioma al inicio
-const language = localStorage.getItem('language') || 'es'; // Predeterminado a español
+// Cargar idioma al inicio, por defecto en español
+const language = localStorage.getItem('language') || 'es';
 changeLanguage(language);
 
 // Evento para cambiar el idioma cuando se hace clic en una bandera
@@ -229,7 +228,7 @@ $(document).ready(function() {
             success: function(response) {
                 // Usar las traducciones de las alertas
                 const successMessage = window.alertTranslations?.form?.successMessage || 'Formulario enviado';
-                const successText = window.alertTranslations?.form?.successMessage || 'Tu mensaje ha sido enviado correctamente.';
+                const successText = window.alertTranslations?.form?.successText || 'Tu mensaje ha sido enviado correctamente.';
                 const confirmButtonText = window.alertTranslations?.buttons?.confirm || 'Aceptar';
 
                 Swal.fire({
@@ -243,7 +242,7 @@ $(document).ready(function() {
             error: function(xhr) {
                 // Usar las traducciones de las alertas
                 const errorMessage = window.alertTranslations?.form?.errorMessage || 'Error';
-                const errorText = window.alertTranslations?.form?.errorMessage || 'Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.';
+                const errorText = window.alertTranslations?.form?.errorText || 'Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.';
                 const confirmButtonText = window.alertTranslations?.buttons?.confirm || 'Aceptar';
 
                 Swal.fire({
@@ -256,6 +255,7 @@ $(document).ready(function() {
         });
     });
 });
+
     </script>
     
 </body>
