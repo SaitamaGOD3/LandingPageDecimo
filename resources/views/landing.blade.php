@@ -171,52 +171,6 @@
     </footer>
     
     <script>
-// Función para cambiar el idioma
-const changeLanguage = async (language) => {
-    try {
-        localStorage.setItem('language', language); // Guardar el idioma seleccionado
-        const response = await fetch(`./${language}.json`);
-        if (!response.ok) {
-            throw new Error(`No se pudo cargar el archivo de traducción: ${language}.json`);
-        }
-
-        const translations = await response.json();
-
-        // Aplicar traducciones a los elementos de la página
-        document.querySelectorAll('[data-section]').forEach(element => {
-            const section = element.getAttribute('data-section');
-            const value = element.getAttribute('data-value');
-
-            if (section && value && translations[section] && translations[section][value]) {
-                element.innerHTML = translations[section][value];
-            }
-        });
-
-        // Almacenar las traducciones de alertas globalmente
-        if (translations.alert) {
-            window.alertTranslations = translations.alert;
-        } else {
-            window.alertTranslations = {}; // Asegurarse de que siempre exista el objeto alert
-        }
-
-    } catch (error) {
-        console.error('Error al cambiar el idioma:', error);
-        alert('Hubo un problema al cargar las traducciones.'); // Alerta si falla
-    }
-};
-
-// Cargar idioma al inicio, por defecto en español
-const language = localStorage.getItem('language') || 'es';
-changeLanguage(language);
-
-// Evento para cambiar el idioma cuando se hace clic en una bandera
-document.getElementById('flags').addEventListener('click', (e) => {
-    const language = e.target.dataset.language;
-    if (language) {
-        changeLanguage(language);
-    }
-});
-
 // Manejo del envío del formulario con traducción para SweetAlert
 $(document).ready(function() {
     $('#contact-form').on('submit', function(event) {
@@ -255,7 +209,6 @@ $(document).ready(function() {
         });
     });
 });
-
     </script>
     
 </body>

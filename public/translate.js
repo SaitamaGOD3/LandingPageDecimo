@@ -17,12 +17,22 @@ const changeLanguage = async (language) => {
             }
         });
 
-        // Actualiza específicamente el formulario
-        translateForm(translations);
+        // Almacenar las traducciones de alertas globalmente
+        if (translations.alert) {
+            window.alertTranslations = translations.alert;
+        } else {
+            window.alertTranslations = {}; // Asegurarse de que siempre exista el objeto alert
+        }
+
     } catch (error) {
-        console.error("Error al cambiar el idioma:", error);
+        console.error('Error al cambiar el idioma:', error);
+        alert('Hubo un problema al cargar las traducciones.'); // Alerta si falla
     }
 };
+
+// Cargar idioma al inicio, por defecto en español
+const language = localStorage.getItem('language') || 'es';
+changeLanguage(language);
 
 // Función para traducir el formulario específicamente
 const translateForm = (translations) => {
@@ -53,3 +63,4 @@ document.getElementById('flags').addEventListener('click', (e) => {
 document.querySelectorAll('[data-section]').forEach(element => {
     console.log('Elemento encontrado:', element);
 });
+
