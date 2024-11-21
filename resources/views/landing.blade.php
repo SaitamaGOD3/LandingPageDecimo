@@ -171,80 +171,69 @@
     </footer>
     
     <script>
-        $(document).ready(function() {
-            // Inicializar las traducciones vacías
-            let translations = {}; 
-    
-            // Obtener el idioma seleccionado, por defecto es español si no se encuentra el idioma
-            const language = localStorage.getItem('language') || 'es'; // 'es' por defecto si no hay idioma guardado
-    
-            // Cargar las traducciones desde el archivo JSON
-            fetch(`./${language}.json`)
-                .then(response => response.json())
-                .then(data => {
-                    translations = data; // Guardar las traducciones cargadas
-                })
-                .catch(error => {
-                    console.error('Error al cargar las traducciones:', error);
+       // Función para cambiar el idioma
+const changeLanguage = async (language) => {
+    localStorage.setItem('language', language);
+    const response = await fetch(`./${language}.json`);
+    const translations = await response.json();
+
+    // Aplicar las traducciones a los elementos
+    document.querySelectorAll('[data-section]').forEach(element => {
+        const section = element.getAttribute('data-section');
+        const value = element.getAttribute('data-value');
+
+        if (section && value && translations[section] && translations[section][value]) {
+            element.innerHTML = translations[section][value];
+        }
+    });
+
+    // Asegurarse de que SweetAlert utilice las traducciones
+    if (translations.alert) {
+        window.alertTranslations = translations.alert; // Guardar traducciones de alertas globalmente
+    }
+};
+
+// Cargar idioma al inicio
+const language = localStorage.getItem('language') || 'es'; // Default to Spanish
+changeLanguage(language);
+
+// Evento para cambiar el idioma cuando se hace clic en una bandera
+document.getElementById('flags').addEventListener('click', (e) => {
+    const language = e.target.dataset.language;
+    if (language) {
+        changeLanguage(language);
+    }
+});
+
+// Manejo del envío del formulario con traducción para SweetAlert
+$(document).ready(function() {
+    $('#contact-form').on('submit', function(event) {
+        event.preventDefault(); // Prevenir el comportamiento predeterminado
+        $.ajax({
+            url: "{{ route('contact.submit') }}",
+            method: "POST",
+            data: $(this).serialize(),
+            success: function(response) {
+                Swal.fire({
+                    icon: 'success',
+                    title: window.alertTranslations.form.successMessage || 'Formulario enviado',
+                    text: window.alertTranslations.form.successMessage || 'Tu mensaje ha sido enviado correctamente.',
+                    confirmButtonText: window.alertTranslations.buttons.confirm || 'Aceptar'
                 });
-    
-            // Configurar jQuery para enviar automáticamente el token CSRF con todas las solicitudes AJAX
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-    
-            // Manejar el evento submit del formulario
-            $('#contact-form').on('submit', function(event) {
-                event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario (redirección)
-    
-                $.ajax({
-                    url: "{{ route('contact.submit') }}",
-                    method: "POST",
-                    data: $(this).serialize(),
-                    success: function(response) {
-                        // Asegurarse de que las traducciones estén disponibles antes de mostrar el SweetAlert
-                        if (translations.alert) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: translations.alert.form.successMessage || 'Formulario enviado',
-                                text: translations.alert.form.successMessage || 'Tu mensaje ha sido enviado correctamente.',
-                                confirmButtonText: translations.alert.buttons.confirm || 'Aceptar'
-                            });
-                        } else {
-                            // Si las traducciones no se cargaron, usa los valores predeterminados
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Formulario enviado',
-                                text: 'Tu mensaje ha sido enviado correctamente.',
-                                confirmButtonText: 'Aceptar'
-                            });
-                        }
-                        $('#contact-form')[0].reset(); // Resetea el formulario
-                    },
-                    error: function(xhr) {
-                        // Asegurarse de que las traducciones estén disponibles antes de mostrar el SweetAlert
-                        if (translations.alert) {
-                            Swal.fire({
-                                icon: 'error',
-                                title: translations.alert.form.errorMessage || 'Error',
-                                text: translations.alert.form.errorMessage || 'Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.',
-                                confirmButtonText: translations.alert.buttons.confirm || 'Aceptar'
-                            });
-                        } else {
-                            // Si las traducciones no se cargaron, usa los valores predeterminados
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: 'Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.',
-                                confirmButtonText: 'Aceptar'
-                            });
-                        }
-                    }
+                $('#contact-form')[0].reset(); // Resetea el formulario
+            },
+            error: function(xhr) {
+                Swal.fire({
+                    icon: 'error',
+                    title: window.alertTranslations.form.errorMessage || 'Error',
+                    text: window.alertTranslations.form.errorMessage || 'Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.',
+                    confirmButtonText: window.alertTranslations.buttons.confirm || 'Aceptar'
                 });
-            });
+            }
         });
+    });
+});
+
     </script>
     
 </body>
