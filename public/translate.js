@@ -17,6 +17,9 @@ const changeLanguage = async (language) => {
             }
         });
 
+        // Traducción específica para el formulario
+        translateForm(translations);
+
         // Almacenar las traducciones de alertas globalmente
         if (translations.alert) {
             window.alertTranslations = translations.alert;
@@ -29,10 +32,6 @@ const changeLanguage = async (language) => {
         alert('Hubo un problema al cargar las traducciones.'); // Alerta si falla
     }
 };
-
-// Cargar idioma al inicio, por defecto en español
-const language = localStorage.getItem('language') || 'es';
-changeLanguage(language);
 
 // Función para traducir el formulario específicamente
 const translateForm = (translations) => {
@@ -50,6 +49,12 @@ const translateForm = (translations) => {
         console.error("Error al traducir el formulario:", error);
     }
 };
+
+
+// Cargar idioma al inicio, por defecto en español
+const language = localStorage.getItem('language') || 'es';
+changeLanguage(language);
+
 
 // Evento para cambiar el idioma al hacer clic en una bandera
 document.getElementById('flags').addEventListener('click', (e) => {
