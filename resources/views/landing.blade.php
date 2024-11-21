@@ -19,6 +19,14 @@
     <script src="main.js"></script>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg custom-navbar">
+            <div id="flags" class="flags">
+                <div class="flags_item" data-language="es">
+                    <img src="{{ asset('img/mx.svg') }}" alt="bandera mx" class="bandera-mx">
+                </div>
+                <div class="flags_item" data-language="en">
+                    <img src="{{ asset('img/us.svg') }}" alt="bandera us" class="bandera-us">
+                </div>
+            </div>
             <div class="container">
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,14 +55,6 @@
 
         <!-- Header -->
         <header class="custom-header text-white text-center p-4" id="main-header">
-            <div id="flags" class="flags">
-                <div class="flags_item" data-language="es">
-                    <img src="{{ asset('img/mx.svg') }}" alt="bandera mx" class="bandera-mx">
-                </div>
-                <div class="flags_item" data-language="en">
-                    <img src="{{ asset('img/us.svg') }}" alt="bandera us" class="bandera-us">
-                </div>
-            </div>
             <div class="container d-flex flex-column align-items-center">
                 <img src="{{ asset('img/logo.jpeg') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top mb-2">
                 <h1  data-section="header" data-value="title">Healing Nano</h1>
