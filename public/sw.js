@@ -22,8 +22,8 @@ const urlsToCache = [
   '/css/style.css',
   '/manifest.json',
   '/sw.js',
-  '/mx.json',
-  '/us.json',
+  '/es.json',
+  '/en.json',
 ];
 
 // Evento de instalación
