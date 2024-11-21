@@ -130,18 +130,18 @@
                 <form id="contact-form" action="{{ route('contact.submit') }}" method="POST" autocomplete="off">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label" data-section="contact_us" data-value="form.name">Nombre</label>
+                        <label for="name" class="form-label" data-section="form" data-value="name">Nombre</label>
                         <input type="text" name="name" class="form-control" id="name" required autocomplete="off">
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label" data-section="contact_us" data-value="form.email">Correo Electrónico</label>
+                        <label for="email" class="form-label" data-section="form" data-value="email">Correo Electrónico</label>
                         <input type="email" name="email" class="form-control" id="email" required autocomplete="off">
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label" data-section="contact_us" data-value="form.message">Mensaje</label>
+                        <label for="message" class="form-label" data-section="form" data-value="message">Mensaje</label>
                         <textarea name="message" class="form-control" id="message" required autocomplete="off"></textarea>
                     </div>
-                    <button type="submit" class="btn custom-btn w-100" data-section="contact_us" data-value="form.submit">Enviar</button>
+                    <button type="submit" class="btn custom-btn w-100" data-section="form" data-value="submit">Enviar</button>
                 </form>
             </div>
             <!-- Map -->

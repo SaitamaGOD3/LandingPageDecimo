@@ -25,3 +25,6 @@ document.getElementById('flags').addEventListener('click', (e) => {
         changeLanguage(language);
     }
 });
+document.querySelectorAll('[data-section]').forEach(element => {
+    console.log('Elemento encontrado:', element);
+});

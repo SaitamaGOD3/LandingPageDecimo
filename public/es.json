@@ -28,13 +28,13 @@
     },
     "contact_us": {
       "title": "Contáctanos",
-      "description": "¿Tienes alguna pregunta o comentario sobre Healing Nano? Nos encantaría saber de ti. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.",
-      "form": {
-        "name": "Nombre",
-        "email": "Correo Electrónico",
-        "message": "Mensaje",
-        "submit": "Enviar"
-      }
+      "description": "¿Tienes alguna pregunta o comentario sobre Healing Nano? Nos encantaría saber de ti. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible."
+    },
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "submit": "Enviar"
     },
     "footer": {
       "rights_reserved": "© 2024 Healing Nano. Todos los derechos reservados."
