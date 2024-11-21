@@ -1,5 +1,5 @@
 // Asignar nombre y versión al caché
-const CACHE_VERSION = 'v8'; // Cambia este número al actualizar
+const CACHE_VERSION = 'v9'; // Cambia este número al actualizar
 const CACHE_NAME = `static-${CACHE_VERSION}`;
 
 // Archivos a guardar en el caché
