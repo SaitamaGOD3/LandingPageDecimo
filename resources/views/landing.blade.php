@@ -138,7 +138,7 @@
                         <input type="email" name="email" class="form-control" id="email" required autocomplete="off">
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label" data-section="form" data-value="form.message">Mensaje</label>
+                        <label for="message" class="form-label" data-section="contact_us" data-value="form.message">Mensaje</label>
                         <textarea name="message" class="form-control" id="message" required autocomplete="off"></textarea>
                     </div>
                     <button type="submit" class="btn custom-btn w-100" data-section="contact_us" data-value="form.submit">Enviar</button>
