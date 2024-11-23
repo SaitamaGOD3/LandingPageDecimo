@@ -105,7 +105,7 @@
         <div class="d-flex flex-column align-items-center">
             <img src="{{ asset('img/userm.jpg') }}" class="img-fluid rounded-circle mb-3" alt="Imagen Usuario m">
             <blockquote class="blockquote">
-                <p>"<strong data-section="testimonials" data-value="testmony_1">Healing Nano</strong> no solo es entretenido, sino también increíblemente educativo. He aprendido mucho sobre el sistema inmunológico y la importancia de consultar a un médico, todo mientras juego. ¡Altamente recomendado!"</p>
+                <p>"<strong data-section="testimonials" data-value="testimony_1">Healing Nano</strong> no solo es entretenido, sino también increíblemente educativo. He aprendido mucho sobre el sistema inmunológico y la importancia de consultar a un médico, todo mientras juego. ¡Altamente recomendado!"</p>
                 <footer class="blockquote-footer" data-section="testimonials" data-value="author_1">María González</footer>
             </blockquote>
         </div>
